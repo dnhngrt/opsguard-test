@@ -1,343 +1,343 @@
-!DOCTYPE html
-html lang=id
-head
-    meta charset=UTF-8
-    meta name=viewport content=width=device-width, initial-scale=1.0
-    titleOpsGuard  Monitoring Website & Server untuk DevOpstitle
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpsGuard | Monitoring Website & Server untuk DevOps</title>
     
-    !-- Tailwind CSS (CDN) --
-    script src=httpscdn.tailwindcss.comscript
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    !-- Font Awesome (Icons) --
-    link rel=stylesheet href=httpscdnjs.cloudflare.comajaxlibsfont-awesome6.4.0cssall.min.css
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    !-- Google Fonts (Inter & JetBrains Mono) --
-    link href=httpsfonts.googleapis.comcss2family=Interwght@300;400;600;700&family=JetBrains+Monowght@400;700&display=swap rel=stylesheet
+    <!-- Google Fonts (Inter & JetBrains Mono) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    script
+    <script>
         tailwind.config = {
-            theme {
-                extend {
-                    fontFamily {
-                        sans ['Inter', 'sans-serif'],
-                        mono ['JetBrains Mono', 'monospace'],
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
                     },
-                    colors {
-                        brand {
-                            500 '#3b82f6',  Blue
-                            600 '#2563eb',
-                            dark '#0f172a',  Slate 900
-                            card '#1e293b',  Slate 800
+                    colors: {
+                        brand: {
+                            500: '#3b82f6', // Blue
+                            600: '#2563eb',
+                            dark: '#0f172a', // Slate 900
+                            card: '#1e293b', // Slate 800
                         }
                     }
                 }
             }
         }
-    script
+    </script>
     
-    style
-        body { background-color #0f172a; color #e2e8f0; }
+    <style>
+        body { background-color: #0f172a; color: #e2e8f0; }
         .gradient-text {
-            background linear-gradient(to right, #60a5fa, #34d399);
-            -webkit-background-clip text;
-            -webkit-text-fill-color transparent;
+            background: linear-gradient(to right, #60a5fa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .code-window {
-            background #1e1e1e;
-            border-radius 8px;
-            box-shadow 0 10px 30px rgba(0,0,0,0.5);
-            border 1px solid #333;
+            background: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid #333;
         }
-    style
-head
-body class=antialiased
+    </style>
+</head>
+<body class="antialiased">
 
-    !-- NAVBAR --
-    nav class=fixed w-full z-50 bg-brand-dark90 backdrop-blur-md border-b border-gray-800
-        div class=max-w-7xl mx-auto px-6 h-20 flex items-center justify-between
-            div class=flex items-center gap-2 text-xl font-bold tracking-tight
-                i class=fa-solid fa-server text-blue-500i OpsGuard
-            div
-            div class=hidden mdflex space-x-8 text-sm font-medium text-gray-400
-                a href=#features class=hovertext-white transitionFitura
-                a href=#integration class=hovertext-white transitionIntegrasia
-                a href=#pricing class=hovertext-white transitionHargaa
-                a href=# class=hovertext-white transitionDocsa
-            div
-            div class=flex gap-4
-                a href=# class=hidden mdblock px-4 py-2 text-sm font-medium text-gray-300 hovertext-whiteLog ina
-                a href=# class=px-5 py-2 text-sm font-medium bg-blue-600 hoverbg-blue-500 rounded-md text-white transition shadow-lg shadow-blue-50020
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xl font-bold tracking-tight">
+                <i class="fa-solid fa-server text-blue-500"></i> OpsGuard
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                <a href="#features" class="hover:text-white transition">Fitur</a>
+                <a href="#integration" class="hover:text-white transition">Integrasi</a>
+                <a href="#pricing" class="hover:text-white transition">Harga</a>
+                <a href="#" class="hover:text-white transition">Docs</a>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hidden md:block px-4 py-2 text-sm font-medium text-gray-300 hover:text-white">Log in</a>
+                <a href="#" class="px-5 py-2 text-sm font-medium bg-blue-600 hover:bg-blue-500 rounded-md text-white transition shadow-lg shadow-blue-500/20">
                     Mulai Monitoring
-                a
-            div
-        div
-    nav
+                </a>
+            </div>
+        </div>
+    </nav>
 
-    !-- HERO SECTION --
-    section class=pt-32 pb-20 px-6
-        div class=max-w-7xl mx-auto text-center
-            div class=inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50010 border border-blue-50020 text-blue-400 text-xs font-mono mb-8
-                span class=w-2 h-2 rounded-full bg-green-400 animate-pulsespan
-                v2.0 Released Multi-region Latency Check
-            div
+    <!-- HERO SECTION -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono mb-8">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                v2.0 Released: Multi-region Latency Check
+            </div>
             
-            h1 class=text-5xl mdtext-7xl font-bold mb-6 leading-tight
-                Monitoring Kinerja Website br
-                span class=gradient-textTanpa Ribet.span
-            h1
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Monitoring Kinerja Website <br>
+                <span class="gradient-text">Tanpa Ribet.</span>
+            </h1>
             
-            p class=text-xl text-gray-400 max-w-2xl mx-auto mb-10
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
                 Platform monitoring all-in-one untuk DevOps. Pantau Uptime, SSL, Cron Jobs, dan Server metrics dengan notifikasi real-time ke Slack & Telegram.
-            p
+            </p>
 
-            div class=flex flex-col smflex-row justify-center gap-4 mb-16
-                a href=# class=px-8 py-4 bg-white text-brand-dark font-bold rounded-lg hoverbg-gray-100 transition flex items-center justify-center gap-2
-                    i class=fa-brands fa-githubi Sign up with GitHub
-                a
-                a href=#demo class=px-8 py-4 bg-gray-800 text-white font-bold rounded-lg border border-gray-700 hoverborder-gray-500 transition
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+                <a href="#" class="px-8 py-4 bg-white text-brand-dark font-bold rounded-lg hover:bg-gray-100 transition flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-github"></i> Sign up with GitHub
+                </a>
+                <a href="#demo" class="px-8 py-4 bg-gray-800 text-white font-bold rounded-lg border border-gray-700 hover:border-gray-500 transition">
                     Live Demo
-                a
-            div
+                </a>
+            </div>
 
-            !-- DASHBOARD MOCKUP --
-            div class=relative max-w-5xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-gray-700 bg-gray-900
-                div class=flex items-center gap-2 px-4 py-3 bg-gray-800 border-b border-gray-700
-                    div class=flex gap-1.5
-                        div class=w-3 h-3 rounded-full bg-red-500div
-                        div class=w-3 h-3 rounded-full bg-yellow-500div
-                        div class=w-3 h-3 rounded-full bg-green-500div
-                    div
-                    div class=ml-4 text-xs text-gray-500 font-monodashboard.opsguard.iodiv
-                div
-                div class=p-6 grid grid-cols-1 mdgrid-cols-3 gap-6 text-left
-                    !-- Fake Metrics --
-                    div class=bg-gray-80050 p-4 rounded-lg border border-gray-700
-                        div class=text-gray-400 text-sm mb-1Global Uptimediv
-                        div class=text-2xl font-bold text-green-40099.99%div
-                        div class=text-xs text-gray-500 mt-2Last 30 daysdiv
-                    div
-                    div class=bg-gray-80050 p-4 rounded-lg border border-gray-700
-                        div class=text-gray-400 text-sm mb-1Avg Latencydiv
-                        div class=text-2xl font-bold text-blue-40045msdiv
-                        div class=text-xs text-gray-500 mt-2Jakarta Regiondiv
-                    div
-                    div class=bg-gray-80050 p-4 rounded-lg border border-gray-700
-                        div class=text-gray-400 text-sm mb-1Active Monitorsdiv
-                        div class=text-2xl font-bold text-purple-40012  20div
-                        div class=text-xs text-gray-500 mt-2Pro Plandiv
-                    div
-                    !-- Chart Placeholder --
-                    div class=mdcol-span-3 bg-gray-80050 p-4 rounded-lg border border-gray-700 h-48 flex items-center justify-center
-                        span class=text-gray-600 font-mono text-sm[ Live Heartbeat Graph Visualization ]span
-                    div
-                div
-            div
-        div
-    section
+            <!-- DASHBOARD MOCKUP -->
+            <div class="relative max-w-5xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-gray-700 bg-gray-900">
+                <div class="flex items-center gap-2 px-4 py-3 bg-gray-800 border-b border-gray-700">
+                    <div class="flex gap-1.5">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="ml-4 text-xs text-gray-500 font-mono">dashboard.opsguard.io</div>
+                </div>
+                <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                    <!-- Fake Metrics -->
+                    <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                        <div class="text-gray-400 text-sm mb-1">Global Uptime</div>
+                        <div class="text-2xl font-bold text-green-400">99.99%</div>
+                        <div class="text-xs text-gray-500 mt-2">Last 30 days</div>
+                    </div>
+                    <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                        <div class="text-gray-400 text-sm mb-1">Avg Latency</div>
+                        <div class="text-2xl font-bold text-blue-400">45ms</div>
+                        <div class="text-xs text-gray-500 mt-2">Jakarta Region</div>
+                    </div>
+                    <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                        <div class="text-gray-400 text-sm mb-1">Active Monitors</div>
+                        <div class="text-2xl font-bold text-purple-400">12 / 20</div>
+                        <div class="text-xs text-gray-500 mt-2">Pro Plan</div>
+                    </div>
+                    <!-- Chart Placeholder -->
+                    <div class="md:col-span-3 bg-gray-800/50 p-4 rounded-lg border border-gray-700 h-48 flex items-center justify-center">
+                        <span class="text-gray-600 font-mono text-sm">[ Live Heartbeat Graph Visualization ]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    !-- FEATURES FOR DEVOPS --
-    section id=features class=py-24 bg-brand-card30
-        div class=max-w-7xl mx-auto px-6
-            div class=text-center mb-16
-                h2 class=text-3xl font-bold mb-4Didesain untuk Skalabilitash2
-                p class=text-gray-400Bukan sekadar ping monitor biasa. Tools lengkap untuk SRE dan SysAdmin.p
-            div
+    <!-- FEATURES FOR DEVOPS -->
+    <section id="features" class="py-24 bg-brand-card/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Didesain untuk Skalabilitas</h2>
+                <p class="text-gray-400">Bukan sekadar ping monitor biasa. Tools lengkap untuk SRE dan SysAdmin.</p>
+            </div>
 
-            div class=grid mdgrid-cols-3 gap-8
-                !-- Feature 1 --
-                div class=p-6 bg-brand-card rounded-xl border border-gray-700 hoverborder-blue-50050 transition group
-                    div class=w-12 h-12 bg-blue-90030 rounded-lg flex items-center justify-center mb-4 group-hoverscale-110 transition
-                        i class=fa-solid fa-globe text-blue-400 text-xli
-                    div
-                    h3 class=text-xl font-bold mb-2Multi-Location Checkh3
-                    p class=text-gray-400 text-smValidasi downtime dari 12 lokasi berbeda (SG, US, EU, JP) untuk menghindari false alarm.p
-                div
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-6 bg-brand-card rounded-xl border border-gray-700 hover:border-blue-500/50 transition group">
+                    <div class="w-12 h-12 bg-blue-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-globe text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Multi-Location Check</h3>
+                    <p class="text-gray-400 text-sm">Validasi downtime dari 12 lokasi berbeda (SG, US, EU, JP) untuk menghindari false alarm.</p>
+                </div>
 
-                !-- Feature 2 --
-                div class=p-6 bg-brand-card rounded-xl border border-gray-700 hoverborder-green-50050 transition group
-                    div class=w-12 h-12 bg-green-90030 rounded-lg flex items-center justify-center mb-4 group-hoverscale-110 transition
-                        i class=fa-solid fa-lock text-green-400 text-xli
-                    div
-                    h3 class=text-xl font-bold mb-2SSL Expiry Monitorh3
-                    p class=text-gray-400 text-smDapatkan notifikasi 30, 14, dan 7 hari sebelum sertifikat SSLTLS domain Anda kadaluarsa.p
-                div
+                <!-- Feature 2 -->
+                <div class="p-6 bg-brand-card rounded-xl border border-gray-700 hover:border-green-500/50 transition group">
+                    <div class="w-12 h-12 bg-green-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-lock text-green-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">SSL Expiry Monitor</h3>
+                    <p class="text-gray-400 text-sm">Dapatkan notifikasi 30, 14, dan 7 hari sebelum sertifikat SSL/TLS domain Anda kadaluarsa.</p>
+                </div>
 
-                !-- Feature 3 --
-                div class=p-6 bg-brand-card rounded-xl border border-gray-700 hoverborder-purple-50050 transition group
-                    div class=w-12 h-12 bg-purple-90030 rounded-lg flex items-center justify-center mb-4 group-hoverscale-110 transition
-                        i class=fa-solid fa-clock text-purple-400 text-xli
-                    div
-                    h3 class=text-xl font-bold mb-2Cron Job Monitoringh3
-                    p class=text-gray-400 text-smPantau background jobs, backup otomatis, dan script berkala. Alert jika job tidak berjalan.p
-                div
+                <!-- Feature 3 -->
+                <div class="p-6 bg-brand-card rounded-xl border border-gray-700 hover:border-purple-500/50 transition group">
+                    <div class="w-12 h-12 bg-purple-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-clock text-purple-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Cron Job Monitoring</h3>
+                    <p class="text-gray-400 text-sm">Pantau background jobs, backup otomatis, dan script berkala. Alert jika job tidak berjalan.</p>
+                </div>
                 
-                !-- Feature 4 --
-                div class=p-6 bg-brand-card rounded-xl border border-gray-700 hoverborder-yellow-50050 transition group
-                    div class=w-12 h-12 bg-yellow-90030 rounded-lg flex items-center justify-center mb-4 group-hoverscale-110 transition
-                        i class=fa-solid fa-bullhorn text-yellow-400 text-xli
-                    div
-                    h3 class=text-xl font-bold mb-2Public Status Pageh3
-                    p class=text-gray-400 text-smBuat halaman status publik (status.domainmu.com) agar user tahu insiden secara transparan.p
-                div
+                <!-- Feature 4 -->
+                <div class="p-6 bg-brand-card rounded-xl border border-gray-700 hover:border-yellow-500/50 transition group">
+                    <div class="w-12 h-12 bg-yellow-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-bullhorn text-yellow-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Public Status Page</h3>
+                    <p class="text-gray-400 text-sm">Buat halaman status publik (status.domainmu.com) agar user tahu insiden secara transparan.</p>
+                </div>
 
-                !-- Feature 5 --
-                div class=p-6 bg-brand-card rounded-xl border border-gray-700 hoverborder-pink-50050 transition group
-                    div class=w-12 h-12 bg-pink-90030 rounded-lg flex items-center justify-center mb-4 group-hoverscale-110 transition
-                        i class=fa-solid fa-database text-pink-400 text-xli
-                    div
-                    h3 class=text-xl font-bold mb-2Port & Database Checkh3
-                    p class=text-gray-400 text-smMonitoring spesifik port TCP (MySQL, Redis, Docker) tanpa perlu agen yang berat.p
-                div
+                <!-- Feature 5 -->
+                <div class="p-6 bg-brand-card rounded-xl border border-gray-700 hover:border-pink-500/50 transition group">
+                    <div class="w-12 h-12 bg-pink-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-database text-pink-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Port & Database Check</h3>
+                    <p class="text-gray-400 text-sm">Monitoring spesifik port TCP (MySQL, Redis, Docker) tanpa perlu agen yang berat.</p>
+                </div>
 
-                !-- Feature 6 --
-                div class=p-6 bg-brand-card rounded-xl border border-gray-700 hoverborder-cyan-50050 transition group
-                    div class=w-12 h-12 bg-cyan-90030 rounded-lg flex items-center justify-center mb-4 group-hoverscale-110 transition
-                        i class=fa-solid fa-code text-cyan-400 text-xli
-                    div
-                    h3 class=text-xl font-bold mb-2Developer APIh3
-                    p class=text-gray-400 text-smIntegrasikan monitoring ke CICD pipeline Anda. Full REST API access untuk semua plan.p
-                div
-            div
-        div
-    section
+                <!-- Feature 6 -->
+                <div class="p-6 bg-brand-card rounded-xl border border-gray-700 hover:border-cyan-500/50 transition group">
+                    <div class="w-12 h-12 bg-cyan-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-code text-cyan-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Developer API</h3>
+                    <p class="text-gray-400 text-sm">Integrasikan monitoring ke CI/CD pipeline Anda. Full REST API access untuk semua plan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    !-- INTEGRATION SECTION --
-    section id=integration class=py-24
-        div class=max-w-7xl mx-auto px-6 grid mdgrid-cols-2 gap-12 items-center
-            div
-                h2 class=text-3xl mdtext-4xl font-bold mb-6Alerting di mana saja tim Anda bekerja.h2
-                p class=text-gray-400 mb-8 text-lgJangan biarkan email notifikasi tenggelam. OpsGuard terintegrasi langsung dengan tools komunikasi tim Anda.p
+    <!-- INTEGRATION SECTION -->
+    <section id="integration" class="py-24">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Alerting di mana saja tim Anda bekerja.</h2>
+                <p class="text-gray-400 mb-8 text-lg">Jangan biarkan email notifikasi tenggelam. OpsGuard terintegrasi langsung dengan tools komunikasi tim Anda.</p>
                 
-                ul class=space-y-4
-                    li class=flex items-center gap-3
-                        i class=fa-brands fa-slack text-2xl text-whitei 
-                        span class=text-gray-300Slack (Webhooks & Bot)span
-                    li
-                    li class=flex items-center gap-3
-                        i class=fa-brands fa-telegram text-2xl text-blue-400i 
-                        span class=text-gray-300Telegram Channelspan
-                    li
-                    li class=flex items-center gap-3
-                        i class=fa-brands fa-discord text-2xl text-indigo-400i 
-                        span class=text-gray-300Discord Serverspan
-                    li
-                    li class=flex items-center gap-3
-                        i class=fa-solid fa-envelope text-2xl text-yellow-400i 
-                        span class=text-gray-300Email & SMSspan
-                    li
-                ul
-            div
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3">
+                        <i class="fa-brands fa-slack text-2xl text-white"></i> 
+                        <span class="text-gray-300">Slack (Webhooks & Bot)</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-brands fa-telegram text-2xl text-blue-400"></i> 
+                        <span class="text-gray-300">Telegram Channel</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-brands fa-discord text-2xl text-indigo-400"></i> 
+                        <span class="text-gray-300">Discord Server</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-envelope text-2xl text-yellow-400"></i> 
+                        <span class="text-gray-300">Email & SMS</span>
+                    </li>
+                </ul>
+            </div>
             
-            !-- CODE SNIPPET VISUAL --
-            div class=code-window p-4 font-mono text-sm overflow-hidden
-                div class=flex gap-2 mb-4
-                    div class=w-3 h-3 rounded-full bg-red-500div
-                    div class=w-3 h-3 rounded-full bg-yellow-500div
-                    div class=w-3 h-3 rounded-full bg-green-500div
-                div
-                div class=text-gray-300
-                    p class=mb-2span class=text-green-400➜span span class=text-blue-400~span curl -X POST httpsapi.opsguard.iomonitors p
-                    p class=pl-4 mb-1-H span class=text-yellow-300Authorization Bearer YOUR_API_KEYspan p
-                    p class=pl-4 mb-1-d span class=text-yellow-300'{spanp
-                    p class=pl-8 text-cyan-300type http,p
-                    p class=pl-8 text-cyan-300url httpsmyapp.com,p
-                    p class=pl-8 text-cyan-300interval 60,p
-                    p class=pl-8 text-cyan-300alert_contacts [slack_devops]p
-                    p class=pl-4 mb-2 text-yellow-300}'p
-                    p class=animate-pulse text-gray-500_p
-                div
-            div
-        div
-    section
+            <!-- CODE SNIPPET VISUAL -->
+            <div class="code-window p-4 font-mono text-sm overflow-hidden">
+                <div class="flex gap-2 mb-4">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <div class="text-gray-300">
+                    <p class="mb-2"><span class="text-green-400">➜</span> <span class="text-blue-400">~</span> curl -X POST https://api.opsguard.io/monitors \</p>
+                    <p class="pl-4 mb-1">-H <span class="text-yellow-300">"Authorization: Bearer YOUR_API_KEY"</span> \</p>
+                    <p class="pl-4 mb-1">-d <span class="text-yellow-300">'{</span></p>
+                    <p class="pl-8 text-cyan-300">"type": "http",</p>
+                    <p class="pl-8 text-cyan-300">"url": "https://myapp.com",</p>
+                    <p class="pl-8 text-cyan-300">"interval": 60,</p>
+                    <p class="pl-8 text-cyan-300">"alert_contacts": ["slack_devops"]</p>
+                    <p class="pl-4 mb-2 text-yellow-300">}'</p>
+                    <p class="animate-pulse text-gray-500">_</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    !-- PRICING --
-    section id=pricing class=py-24 bg-brand-card30
-        div class=max-w-7xl mx-auto px-6 text-center
-            h2 class=text-3xl font-bold mb-12Harga Simpel & Transparanh2
+    <!-- PRICING -->
+    <section id="pricing" class="py-24 bg-brand-card/30">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12">Harga Simpel & Transparan</h2>
             
-            div class=grid mdgrid-cols-3 gap-8
-                !-- FREE TIER --
-                div class=bg-gray-800 p-8 rounded-2xl border border-gray-700
-                    h3 class=text-xl font-bold text-gray-300Developerh3
-                    div class=text-4xl font-bold text-white my-4Rp 0div
-                    p class=text-sm text-gray-400 mb-6Untuk side-project & hobi.p
-                    ul class=text-left space-y-3 mb-8 text-sm text-gray-300
-                        lii class=fa-solid fa-check text-green-500 mr-2i 5 Monitorsli
-                        lii class=fa-solid fa-check text-green-500 mr-2i 3-min intervalli
-                        lii class=fa-solid fa-check text-green-500 mr-2i Email Alertsli
-                    ul
-                    a href=# class=block w-full py-3 border border-gray-600 rounded-lg hoverborder-white transition font-mediumMulai Gratisa
-                div
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- FREE TIER -->
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700">
+                    <h3 class="text-xl font-bold text-gray-300">Developer</h3>
+                    <div class="text-4xl font-bold text-white my-4">Rp 0</div>
+                    <p class="text-sm text-gray-400 mb-6">Untuk side-project & hobi.</p>
+                    <ul class="text-left space-y-3 mb-8 text-sm text-gray-300">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> 5 Monitors</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> 3-min interval</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Email Alerts</li>
+                    </ul>
+                    <a href="#" class="block w-full py-3 border border-gray-600 rounded-lg hover:border-white transition font-medium">Mulai Gratis</a>
+                </div>
 
-                !-- PRO TIER (Highlight) --
-                div class=bg-gradient-to-b from-blue-90040 to-gray-800 p-8 rounded-2xl border border-blue-500 relative transform md-translate-y-4
-                    div class=absolute top-0 left-12 transform -translate-x-12 -translate-y-12 bg-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wideMost Populardiv
-                    h3 class=text-xl font-bold text-whiteStartuph3
-                    div class=text-4xl font-bold text-white my-4Rp 99kspan class=text-lg text-gray-400 font-normalblnspandiv
-                    p class=text-sm text-gray-400 mb-6Untuk tim yang berkembang.p
-                    ul class=text-left space-y-3 mb-8 text-sm text-gray-300
-                        lii class=fa-solid fa-check text-blue-400 mr-2i 50 Monitorsli
-                        lii class=fa-solid fa-check text-blue-400 mr-2i 1-min intervalli
-                        lii class=fa-solid fa-check text-blue-400 mr-2i Slack & Telegram Alertli
-                        lii class=fa-solid fa-check text-blue-400 mr-2i SSL Monitoringli
-                    ul
-                    a href=# class=block w-full py-3 bg-blue-600 hoverbg-blue-500 rounded-lg text-white transition font-bold shadow-lg shadow-blue-50025Pilih Startupa
-                div
+                <!-- PRO TIER (Highlight) -->
+                <div class="bg-gradient-to-b from-blue-900/40 to-gray-800 p-8 rounded-2xl border border-blue-500 relative transform md:-translate-y-4">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Most Popular</div>
+                    <h3 class="text-xl font-bold text-white">Startup</h3>
+                    <div class="text-4xl font-bold text-white my-4">Rp 99k<span class="text-lg text-gray-400 font-normal">/bln</span></div>
+                    <p class="text-sm text-gray-400 mb-6">Untuk tim yang berkembang.</p>
+                    <ul class="text-left space-y-3 mb-8 text-sm text-gray-300">
+                        <li><i class="fa-solid fa-check text-blue-400 mr-2"></i> 50 Monitors</li>
+                        <li><i class="fa-solid fa-check text-blue-400 mr-2"></i> 1-min interval</li>
+                        <li><i class="fa-solid fa-check text-blue-400 mr-2"></i> Slack & Telegram Alert</li>
+                        <li><i class="fa-solid fa-check text-blue-400 mr-2"></i> SSL Monitoring</li>
+                    </ul>
+                    <a href="#" class="block w-full py-3 bg-blue-600 hover:bg-blue-500 rounded-lg text-white transition font-bold shadow-lg shadow-blue-500/25">Pilih Startup</a>
+                </div>
 
-                !-- ENTERPRISE --
-                div class=bg-gray-800 p-8 rounded-2xl border border-gray-700
-                    h3 class=text-xl font-bold text-gray-300Businessh3
-                    div class=text-4xl font-bold text-white my-4Rp 499kspan class=text-lg text-gray-400 font-normalblnspandiv
-                    p class=text-sm text-gray-400 mb-6Untuk performa misi kritis.p
-                    ul class=text-left space-y-3 mb-8 text-sm text-gray-300
-                        lii class=fa-solid fa-check text-green-500 mr-2i 200 Monitorsli
-                        lii class=fa-solid fa-check text-green-500 mr-2i 30-sec intervalli
-                        lii class=fa-solid fa-check text-green-500 mr-2i Status Page (Custom Domain)li
-                        lii class=fa-solid fa-check text-green-500 mr-2i API Accessli
-                    ul
-                    a href=# class=block w-full py-3 border border-gray-600 rounded-lg hoverborder-white transition font-mediumHubungi Salesa
-                div
-            div
-        div
-    section
+                <!-- ENTERPRISE -->
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700">
+                    <h3 class="text-xl font-bold text-gray-300">Business</h3>
+                    <div class="text-4xl font-bold text-white my-4">Rp 499k<span class="text-lg text-gray-400 font-normal">/bln</span></div>
+                    <p class="text-sm text-gray-400 mb-6">Untuk performa misi kritis.</p>
+                    <ul class="text-left space-y-3 mb-8 text-sm text-gray-300">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> 200 Monitors</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> 30-sec interval</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Status Page (Custom Domain)</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> API Access</li>
+                    </ul>
+                    <a href="#" class="block w-full py-3 border border-gray-600 rounded-lg hover:border-white transition font-medium">Hubungi Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    !-- FOOTER --
-    footer class=bg-black py-12 border-t border-gray-800
-        div class=max-w-7xl mx-auto px-6 grid mdgrid-cols-4 gap-8
-            div class=col-span-1 mdcol-span-1
-                div class=flex items-center gap-2 text-xl font-bold tracking-tight mb-4
-                    i class=fa-solid fa-server text-blue-500i OpsGuard
-                div
-                p class=text-gray-500 text-smMenjaga server Anda tetap hijau sejak 2024.p
-            div
-            div
-                h4 class=font-bold mb-4Producth4
-                ul class=space-y-2 text-sm text-gray-500
-                    lia href=# class=hovertext-blue-400Uptime Monitorali
-                    lia href=# class=hovertext-blue-400Status Pagesali
-                    lia href=# class=hovertext-blue-400Integrationsali
-                ul
-            div
-            div
-                h4 class=font-bold mb-4Resourcesh4
-                ul class=space-y-2 text-sm text-gray-500
-                    lia href=# class=hovertext-blue-400Documentationali
-                    lia href=# class=hovertext-blue-400API Referenceali
-                    lia href=# class=hovertext-blue-400Blogali
-                ul
-            div
-            div
-                h4 class=font-bold mb-4Legalh4
-                ul class=space-y-2 text-sm text-gray-500
-                    lia href=# class=hovertext-blue-400Privacy Policyali
-                    lia href=# class=hovertext-blue-400Terms of Serviceali
-                ul
-            div
-        div
-        div class=max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-gray-900 text-center text-gray-600 text-sm
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center gap-2 text-xl font-bold tracking-tight mb-4">
+                    <i class="fa-solid fa-server text-blue-500"></i> OpsGuard
+                </div>
+                <p class="text-gray-500 text-sm">Menjaga server Anda tetap hijau sejak 2024.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Product</h4>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="#" class="hover:text-blue-400">Uptime Monitor</a></li>
+                    <li><a href="#" class="hover:text-blue-400">Status Pages</a></li>
+                    <li><a href="#" class="hover:text-blue-400">Integrations</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Resources</h4>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="#" class="hover:text-blue-400">Documentation</a></li>
+                    <li><a href="#" class="hover:text-blue-400">API Reference</a></li>
+                    <li><a href="#" class="hover:text-blue-400">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Legal</h4>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="#" class="hover:text-blue-400">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-blue-400">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-gray-900 text-center text-gray-600 text-sm">
             &copy; 2024 OpsGuard Inc. All rights reserved.
-        div
-    footer
+        </div>
+    </footer>
 
-body
-html
+</body>
+</html>
