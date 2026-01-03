@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OpsGuard - Platform monitoring server, uptime, dan cron job terbaik untuk DevOps. Integrasi Slack & Telegram realtime.">
     <title>OpsGuard | Monitoring Website & Server untuk DevOps</title>
     
     <!-- Tailwind CSS (CDN) -->
@@ -48,6 +49,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             border: 1px solid #333;
         }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="antialiased">
@@ -55,7 +57,7 @@
     <!-- NAVBAR -->
     <nav class="fixed w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2 text-xl font-bold tracking-tight">
+            <div class="flex items-center gap-2 text-xl font-bold tracking-tight cursor-pointer" onclick="window.scrollTo(0,0)">
                 <i class="fa-solid fa-server text-blue-500"></i> OpsGuard
             </div>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
@@ -100,7 +102,7 @@
             </div>
 
             <!-- DASHBOARD MOCKUP -->
-            <div class="relative max-w-5xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-gray-700 bg-gray-900">
+            <div id="demo" class="relative max-w-5xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-gray-700 bg-gray-900">
                 <div class="flex items-center gap-2 px-4 py-3 bg-gray-800 border-b border-gray-700">
                     <div class="flex gap-1.5">
                         <div class="w-3 h-3 rounded-full bg-red-500"></div>
@@ -110,7 +112,6 @@
                     <div class="ml-4 text-xs text-gray-500 font-mono">dashboard.opsguard.io</div>
                 </div>
                 <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                    <!-- Fake Metrics -->
                     <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
                         <div class="text-gray-400 text-sm mb-1">Global Uptime</div>
                         <div class="text-2xl font-bold text-green-400">99.99%</div>
@@ -126,7 +127,6 @@
                         <div class="text-2xl font-bold text-purple-400">12 / 20</div>
                         <div class="text-xs text-gray-500 mt-2">Pro Plan</div>
                     </div>
-                    <!-- Chart Placeholder -->
                     <div class="md:col-span-3 bg-gray-800/50 p-4 rounded-lg border border-gray-700 h-48 flex items-center justify-center">
                         <span class="text-gray-600 font-mono text-sm">[ Live Heartbeat Graph Visualization ]</span>
                     </div>
@@ -152,7 +152,6 @@
                     <h3 class="text-xl font-bold mb-2">Multi-Location Check</h3>
                     <p class="text-gray-400 text-sm">Validasi downtime dari 12 lokasi berbeda (SG, US, EU, JP) untuk menghindari false alarm.</p>
                 </div>
-
                 <!-- Feature 2 -->
                 <div class="p-6 bg-brand-card rounded-xl border border-gray-700 hover:border-green-500/50 transition group">
                     <div class="w-12 h-12 bg-green-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition">
@@ -161,7 +160,6 @@
                     <h3 class="text-xl font-bold mb-2">SSL Expiry Monitor</h3>
                     <p class="text-gray-400 text-sm">Dapatkan notifikasi 30, 14, dan 7 hari sebelum sertifikat SSL/TLS domain Anda kadaluarsa.</p>
                 </div>
-
                 <!-- Feature 3 -->
                 <div class="p-6 bg-brand-card rounded-xl border border-gray-700 hover:border-purple-500/50 transition group">
                     <div class="w-12 h-12 bg-purple-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition">
@@ -170,7 +168,6 @@
                     <h3 class="text-xl font-bold mb-2">Cron Job Monitoring</h3>
                     <p class="text-gray-400 text-sm">Pantau background jobs, backup otomatis, dan script berkala. Alert jika job tidak berjalan.</p>
                 </div>
-                
                 <!-- Feature 4 -->
                 <div class="p-6 bg-brand-card rounded-xl border border-gray-700 hover:border-yellow-500/50 transition group">
                     <div class="w-12 h-12 bg-yellow-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition">
@@ -179,7 +176,6 @@
                     <h3 class="text-xl font-bold mb-2">Public Status Page</h3>
                     <p class="text-gray-400 text-sm">Buat halaman status publik (status.domainmu.com) agar user tahu insiden secara transparan.</p>
                 </div>
-
                 <!-- Feature 5 -->
                 <div class="p-6 bg-brand-card rounded-xl border border-gray-700 hover:border-pink-500/50 transition group">
                     <div class="w-12 h-12 bg-pink-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition">
@@ -188,7 +184,6 @@
                     <h3 class="text-xl font-bold mb-2">Port & Database Check</h3>
                     <p class="text-gray-400 text-sm">Monitoring spesifik port TCP (MySQL, Redis, Docker) tanpa perlu agen yang berat.</p>
                 </div>
-
                 <!-- Feature 6 -->
                 <div class="p-6 bg-brand-card rounded-xl border border-gray-700 hover:border-cyan-500/50 transition group">
                     <div class="w-12 h-12 bg-cyan-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition">
@@ -207,7 +202,6 @@
             <div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Alerting di mana saja tim Anda bekerja.</h2>
                 <p class="text-gray-400 mb-8 text-lg">Jangan biarkan email notifikasi tenggelam. OpsGuard terintegrasi langsung dengan tools komunikasi tim Anda.</p>
-                
                 <ul class="space-y-4">
                     <li class="flex items-center gap-3">
                         <i class="fa-brands fa-slack text-2xl text-white"></i> 
@@ -228,7 +222,6 @@
                 </ul>
             </div>
             
-            <!-- CODE SNIPPET VISUAL -->
             <div class="code-window p-4 font-mono text-sm overflow-hidden">
                 <div class="flex gap-2 mb-4">
                     <div class="w-3 h-3 rounded-full bg-red-500"></div>
@@ -254,7 +247,6 @@
     <section id="pricing" class="py-24 bg-brand-card/30">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-12">Harga Simpel & Transparan</h2>
-            
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- FREE TIER -->
                 <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700">
@@ -268,8 +260,7 @@
                     </ul>
                     <a href="#" class="block w-full py-3 border border-gray-600 rounded-lg hover:border-white transition font-medium">Mulai Gratis</a>
                 </div>
-
-                <!-- PRO TIER (Highlight) -->
+                <!-- PRO TIER -->
                 <div class="bg-gradient-to-b from-blue-900/40 to-gray-800 p-8 rounded-2xl border border-blue-500 relative transform md:-translate-y-4">
                     <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Most Popular</div>
                     <h3 class="text-xl font-bold text-white">Startup</h3>
@@ -283,7 +274,6 @@
                     </ul>
                     <a href="#" class="block w-full py-3 bg-blue-600 hover:bg-blue-500 rounded-lg text-white transition font-bold shadow-lg shadow-blue-500/25">Pilih Startup</a>
                 </div>
-
                 <!-- ENTERPRISE -->
                 <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700">
                     <h3 class="text-xl font-bold text-gray-300">Business</h3>
